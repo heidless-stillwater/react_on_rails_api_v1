@@ -8,13 +8,36 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+################# USERS #################
+
+User.destroy_all 
+
+user1 = User.create(
+  email: "jane@doe.com", password: "pw1234"
+)
+
+user2 = User.create(
+  :email => "john@doe.com", :password => "pw1234"
+)
+
+
+################# POSTS #################
+
 Post.destroy_all 
 
-# create 20 posts
-20.times do
+10.times do
   Post.create(
     title: Faker::Lorem.sentence(word_count: 3),
-    body: Faker::Lorem.paragraph(sentence_count: 3)
+    body: Faker::Lorem.paragraph(sentence_count: 3),
+    user: user1
+  )
+end
+
+10.times do
+  Post.create(
+    title: Faker::Lorem.sentence(word_count: 3),
+    body: Faker::Lorem.paragraph(sentence_count: 3),
+    user: user2
   )
 end
 
