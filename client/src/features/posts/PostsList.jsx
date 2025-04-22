@@ -32,7 +32,6 @@ function PostsList() {
   return (
     <div>
       {posts.map((post) => {
-        console.log("post", post);
         return (
           <div key={post.id} className="post-container">
             <h2>{post.title}</h2>
