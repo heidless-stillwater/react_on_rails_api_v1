@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   # API Rputes should be in '/api/v1'
+  root 'api/v1/posts#index'
+  
   namespace :api do 
     namespace :v1 do 
       resources :posts
